@@ -7,7 +7,7 @@ class DiscordClient(discord.Client):
     def __init__(self) -> None:
         intents = discord.Intents.default()
         intents.message_content = True
-        super().__init__(intents=intents)
+        discord.Client.__init__(self, intents=intents)
         self.execute = Execute()
 
     async def on_ready(self):
