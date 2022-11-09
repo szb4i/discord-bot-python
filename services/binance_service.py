@@ -1,11 +1,11 @@
 from binance.enums import *
 from binance.client import Client
-import credentials
+from credentials import get_binance_key, get_binance_secret_key
 from configuration import *
 
-class Execute():
+class BinanceService():
     def __init__(self):
-        self.binance_client=Client(credentials.get_binance_key(), credentials.get_binance_secret_key())
+        self.binance_client=Client(get_binance_key(), get_binance_secret_key())
 
     def open_long(self, symbol):
         self.binance_client.futures_change_leverage(symbol=symbol, leverage=LEVERAGE)
