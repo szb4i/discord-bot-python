@@ -1,4 +1,3 @@
-import discord
 import credentials
 from discord_client import DiscordClient
 
